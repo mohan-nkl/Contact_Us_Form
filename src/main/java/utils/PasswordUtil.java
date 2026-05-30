@@ -9,10 +9,12 @@ public class PasswordUtil {
 	}
 	
 	public static String hashPassword(String inputPassword) {
-		return BCrypt.hashpw(inputPassword, BCrypt.gensalt(12));
+		
+		return BCrypt.hashpw(inputPassword, BCrypt.gensalt(12));	
 	}
 	
 	public static boolean verifyPassword(String inputPassword, String hashedPassword) {
+		
 		return BCrypt.checkpw(inputPassword, hashedPassword);
 	}
 }
