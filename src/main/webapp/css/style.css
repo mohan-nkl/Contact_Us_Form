@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* ===== Reset: strip default spacing so layout is predictable ===== */
+* {
+    box-sizing: border-box;   /* padding/border count inside the width */
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Page background and base text ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #e9e9e9;       /* light grey page */
+    color: #333;
+    padding: 30px;
+}
+
+/* ===== <main> centres the card horizontally ===== */
+main {
+    max-width: 480px;
+    margin: 0 auto;            /* auto left+right = centred */
+}
+
+/* ===== The white form box (our <section class="card">) ===== */
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px 28px;
+}
+
+/* ===== Heading area (<header>) ===== */
+header h1 { font-size: 24px; color: #444; }
+header p  { color: #888; font-size: 14px; margin-bottom: 16px; }
+
+/* ===== Labels sit on their own line above each field ===== */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 6px;
+    font-size: 14px;
+}
+
+/* ===== Text inputs and the message box fill the width ===== */
+input[type=text],
+textarea {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* ===== Small hint text under the email field ===== */
+small { color: #999; font-size: 12px; }
+
+/* ===== Submit button ===== */
+button {
+    margin-top: 18px;
+    background: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button:hover { background: #333; }
+
+/* ===== Success and error message boxes ===== */
+.message {
+    padding: 10px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.message.success { background: #e3f6e3; color: #2c6e2c; }   /* light green */
+.message.error   { background: #fde8e8; color: #b3261e; }   /* light red */
+
+/* ===== Admin page: wider container than the form card ===== */
+main.admin {
+    max-width: 950px;
+}
+
+/* ===== Top bar: title on the left, logout on the right ===== */
+.admin-top {
+    display: flex;                      /* place children in a row */
+    justify-content: space-between;     /* push them to opposite ends */
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* ===== Logout link styled like a red button ===== */
+.logout {
+    background: #c0392b;
+    color: #fff;
+    text-decoration: none;              /* remove the link underline */
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* ===== Section headings (Active / Archived) ===== */
+h2 {
+    margin: 22px 0 10px;
+    color: #444;
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;          /* merge cell borders into one line */
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;      /* light line under each row */
+    font-size: 14px;
+    vertical-align: top;
+}
+th {
+    background: #444;                    /* dark header row */
+    color: #fff;
+}
+
+/* ===== Archived rows look greyed-out ===== */
+tr.archived td {
+    color: #999;
+    background: #fafafa;
+}
+
+/* ===== Buttons inside table cells: smaller, no big top margin ===== */
+td button {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+}
