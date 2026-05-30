@@ -14,8 +14,7 @@ public class ContactRequestDAO {
 	
 	public void saveRequest(ContactRequest request) throws SQLException {
 		
-		String sql = "INSERT INTO contact_requests (full_name, email, message) " + 
-						"VALUES(?, ?, ?)";
+		String sql = "INSERT INTO contact_requests (full_name, email, message) VALUES(?, ?, ?)";
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

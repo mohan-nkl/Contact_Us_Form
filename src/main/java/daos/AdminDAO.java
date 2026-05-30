@@ -12,7 +12,7 @@ public class AdminDAO {
 
 	public Admin findAdminByUsername(String username) throws SQLException {
 		
-		String sql = "SELECT id, username, password_hash FROM admins WHERE username=?";
+		String sql = "SELECT id, username, password_hash FROM admins WHERE username = ?";
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -22,10 +22,11 @@ public class AdminDAO {
 			
 			connection = DBConnection.getConnection();
 			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, username);
+			preparedStatement.setString(1, username);	
 			resultSet = preparedStatement.executeQuery();
 			
 			if (resultSet.next()) {
+				
 				Admin admin = new Admin();
 				admin.setAdminId(resultSet.getInt("id"));
 				admin.setName(resultSet.getString("username"));

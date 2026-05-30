@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-	
+
 	private static final String url = "jdbc:postgresql://localhost:5432/contactus_database";
 	private static final String username = "postgres";
 	private static final String password = "mohan1997";
-	
+
 	static {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -18,11 +18,9 @@ public class DBConnection {
 		}
 	}
 
-	
 	private DBConnection() {
-		
 	}
-	
+
 	public static Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(url, username, password);
 	}
